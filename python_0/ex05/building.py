@@ -29,7 +29,7 @@ def count_chars(text):
 
 def main():
     """
-    This function takes user input or command line argument \
+    This program takes user input or command line argument \
 and calls the count_chars function.
     If no argument is provided, it prompts the user to enter a text.
     If more than one argument is provided, it raises an AssertionError.
@@ -52,8 +52,6 @@ and calls the count_chars function.
 
 if __name__ == "__main__":
     try:
-        print(main.__doc__)
-        print(count_chars.__doc__)
         main()
     except AssertionError as e:
         print("AssertionError: " + str(e))
