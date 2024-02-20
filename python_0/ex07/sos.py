@@ -1,14 +1,15 @@
 import sys
 
 MORSE_CODE_DICT = {
-    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....',
-    'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.',
-    'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
-    'Y': '-.--', 'Z': '--..',
-    '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-', '5': '.....',
-    '6': '-....', '7': '--...', '8': '---..', '9': '----.',
-    ' ': '/'
+    'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
+    'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
+    'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
+    'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+    'Y': '-.--', 'Z': '--..', '0': '-----', '1': '.----', '2': '..---',
+    '3': '...--', '4': '....-', '5': '.....', '6': '-....', '7': '--...',
+    '8': '---..', '9': '----.', ' ': '/'
 }
+
 
 def encode_to_morse(text):
     """
@@ -21,7 +22,8 @@ def encode_to_morse(text):
         str: The encoded text in Morse code.
 
     Raises:
-        AssertionError: If the text contains characters that are not supported by the Morse code dictionary.
+        AssertionError: If the text contains characters that are not supported\
+            by the Morse code dictionary.
     """
     encoded_text = ''
     for char in text.upper():
@@ -31,6 +33,7 @@ def encode_to_morse(text):
             raise AssertionError("the arguments are bad")
     return encoded_text.strip()
 
+
 def main():
     args = sys.argv[1:]
     try:
@@ -39,6 +42,7 @@ def main():
         print(encode_to_morse(args[0]))
     except Exception as e:
         print("AssertionError: " + str(e))
+
 
 if __name__ == "__main__":
     main()

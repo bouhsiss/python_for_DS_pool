@@ -1,5 +1,3 @@
-import time
-from tqdm import tqdm
 import os
 
 
@@ -9,7 +7,8 @@ def ft_tqdm(iterable, total=None):
 
     Parameters:
     iterable (iterable): The iterable object to iterate over.
-    total (int, optional): The total number of iterations. If not provided, it will be set to the length of the iterable.
+    total (int, optional): The total number of iterations. If not provided, \
+        it will be set to the length of the iterable.
 
     Yields:
     item: The next item from the iterable.
