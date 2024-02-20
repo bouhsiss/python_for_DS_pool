@@ -25,10 +25,3 @@ def ft_tqdm(iterable, total=None):
         print(f"\r{formatted_progress} {bar} | {i}/{total}", end='')
         yield item
     print()
-
-my_list = range(300)
-for item in ft_tqdm(my_list):
-    time.sleep(0.1)
-
-for item in tqdm(my_list):
-    time.sleep(0.1)

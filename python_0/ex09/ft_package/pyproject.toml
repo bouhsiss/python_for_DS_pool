@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ft_package_bouhsiss"
+version = "0.0.1"
+authors = [
+  { name="Bouhsiss Houda", email="hbouhsis@student.1337.ma" },
+]
+description = "A sample test package"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["ft_package", "bouhsiss"]
+license = {text = "MIT"}
+
+[project.urls]
+Homepage = "https://github.com/bouhsiss/python_for_DS_pool/tree/main/python_0/ex09/ft_package"
