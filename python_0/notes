@@ -1,0 +1,6 @@
+-- write tester.py for each function 
+-- check the docs for each function 
+-- check that every function is wrapped in a try except
+
+
+-- A source distribution contains the source code of a project along with any necessary metadata files. It requires installation and compilation on the user's machine. A built distribution, like a .whl file, is pre-compiled and ready for installation, saving users from compiling the source code themselves.
