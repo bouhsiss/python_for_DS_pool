@@ -7,21 +7,23 @@ def even_or_odd(num):
         print("I'm Odd.")
 
 def main():
-    args = sys.argv[1:]
-
-    if len(args) == 0:
-        exit()
-    assert len(args) == 1, "one argument is required"
-
     try :
-        number = int(args[0])
-    except ValueError:
-        raise AssertionError("argument is not a number")
+        args = sys.argv[1:]
 
-    even_or_odd(number)
+        if len(args) == 0:
+            exit()
+        assert len(args) == 1, "one argument is required"
 
-if __name__ == "__main__":
-    try :
-        main()
+        try :
+            number = int(args[0])
+        except ValueError:
+            raise AssertionError("argument is not a number")
+
+        even_or_odd(number)
     except AssertionError as e:
         print("AssertionError: " + str(e))
+
+
+if __name__ == "__main__":
+    main()
+    

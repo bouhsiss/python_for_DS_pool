@@ -9,12 +9,13 @@ def greet(data):
     if (isinstance(data, list)):
         data[1] = "World!"
     elif (isinstance(data, tuple)):
+        del data
         data = ("Hello", "Morocco!")
     elif (isinstance(data, set)):
         data.remove("tutu!")
         data.add("Benguerir!")
     elif (isinstance(data, dict)):
-        data.update({"Hello" : "1337!"})
+        data["Hello"] = "1337!"
     
     return data
 
@@ -28,3 +29,4 @@ print(ft_list)
 print(ft_tuple)
 print(ft_set)
 print(ft_dict)
+

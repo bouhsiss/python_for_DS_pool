@@ -34,24 +34,23 @@ and calls the count_chars function.
     If no argument is provided, it prompts the user to enter a text.
     If more than one argument is provided, it raises an AssertionError.
     """
-    args = sys.argv[1:]
-
-    if len(args) > 1:
-        raise AssertionError("more than one argument is provided")
-    elif len(args) == 0:
-        try:
-            text = input("What is the text to count?\n")
-            text += '\n'
-        except EOFError:
-            return
-    else:
-        text = args[0]
-
-    count_chars(text)
-
-
-if __name__ == "__main__":
     try:
-        main()
+        args = sys.argv[1:]
+
+        if len(args) > 1:
+            raise AssertionError("more than one argument is provided")
+        elif len(args) == 0:
+            try:
+                text = input("What is the text to count?\n")
+                text += '\n'
+            except EOFError:
+                return
+        else:
+            text = args[0]
+
+        count_chars(text)
     except AssertionError as e:
         print("AssertionError: " + str(e))
+
+if __name__ == "__main__":
+    main()

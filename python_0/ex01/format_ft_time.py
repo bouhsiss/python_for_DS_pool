@@ -1,5 +1,5 @@
 import time
-import datetime
+from datetime import datetime
 
 def print_unix_time() :
     unix_time = time.time()
@@ -8,7 +8,7 @@ def print_unix_time() :
     print("Seconds since January 1, 1970: ", formatted_unix_time , " or ", scientific_notation_time, " in scientific notation", sep="")
 
 def print_today_date() :
-    now = datetime.datetime.now()
+    now = datetime.now()
     formatted_date = now.strftime("%b %d %Y")
     print(formatted_date)
 
