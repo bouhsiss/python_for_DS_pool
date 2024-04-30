@@ -3,16 +3,6 @@ from PIL import UnidentifiedImageError
 import numpy as np
 
 def ft_load(path: str) -> np.ndarray:
-    """
-    This function takes as a parameter a path to an image file, loads the image, prints its format, and returns its pixel values in RGB format.
-
-    Parameters:
-    path (str): The path to the image file.
-
-    Returns:
-    np.ndarray: The pixel values of the image in RGB format.
-    """
-
     try:
         image_array = np.asarray(Image.open(path))
 
