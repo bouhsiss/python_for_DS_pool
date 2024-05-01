@@ -1,10 +1,7 @@
-from load_image import ft_load
 import matplotlib.pyplot as plt
-from PIL import Image
 import numpy as np
 
-
-def zoom(image_array: np.ndarray):
+def zoom_image(image_array: np.ndarray):
     center_y, center_x = image_array.shape[0]//2, image_array.shape[1]//2
 
     
@@ -25,16 +22,3 @@ def display(image_array: np.ndarray):
     plt.imshow(image_array, cmap='gray')
 
     plt.show()   
-
-def main():
-    image_array = ft_load("python_1/ex03/animal.jpeg")
-
-    if not image_array is None:
-        zoomed_image = zoom(image_array)
-        grayscale_image = rgb_to_gray(zoomed_image)
-        print("New shape after slicing: ",grayscale_image.shape)
-        print(grayscale_image)
-        display(grayscale_image)
-
-if __name__ == "__main__":
-    main()
