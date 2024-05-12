@@ -1,8 +1,11 @@
 import numpy as np
 
+
 def slice_me(family: list, start: int, end: int) -> list:
     """
-    this function takes as a parameter a 2D array, prints its shapes, and returns a truncated version of the array based on the provided start and end arguments.
+    this function takes as a parameter a 2D array, prints its shapes, and \
+returns a truncated version of the array based on the provided start \
+and end arguments.
 
     Parameters:
     family : list : A 2D array.
@@ -12,21 +15,22 @@ def slice_me(family: list, start: int, end: int) -> list:
     Returns:
     list : A truncated version of the array.
     """
-    try :
-        if not isinstance(family, list) or not isinstance(start, int) or not isinstance(end, int):
-            raise AssertionError("family must be a list, start and end must be integers")
+    try:
+        if (not isinstance(family, list) or
+                not isinstance(start, int) or
+                not isinstance(end, int)):
+            raise AssertionError("family must be a list, start and end must \
+be integers")
 
         if not all(isinstance(i, list) for i in family):
             raise AssertionError("all elements of family must be lists")
-        
+
         if len({len(i) for i in family}) != 1:
             raise AssertionError("all sublists must have the same length")
 
         np_family = np.array(family)
         if np_family.ndim != 2:
             raise AssertionError("family must be a 2D array")
-        
-
 
         print("My shape is: ", np_family.shape)
         truncated_family = np_family[start:end]

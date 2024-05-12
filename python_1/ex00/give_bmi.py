@@ -1,26 +1,33 @@
 import numpy as np
 
-def give_bmi(height : list[int | float], weight: list[int | float]) -> list[int | float]:
+
+def give_bmi(
+    height: list[int | float],
+    weight: list[int | float]
+) -> list[int | float]:
     """
-    This function takes in a list of heights and weights and returns a list of BMI values.
-    
+    This function takes in a list of heights and weights and returns a list \
+ of BMI values.
+
     Parameters:
     height : list(int | float) : A list of heights in cm.
     weight : list(int | float) : A list of weights in kg.
-    
+
     Returns:
     list(int | float) : A list of BMI values.
     """
-    try :
+    try:
         if not isinstance(height, list) or not isinstance(weight, list):
-            raise ValueError("height and weight must be a list of integers or floats")
-        try :
+            raise ValueError("height and weight must be a list of integers \
+or floats")
+        try:
             height = np.array(height)
             weight = np.array(weight)
-            
+
             bmi = weight / (height ** 2)
-        except TypeError as e: 
-            raise ValueError("height and weight must be a list of integers or floats")
+        except TypeError:
+            raise ValueError("height and weight must be a list of integers \
+or floats")
         if height.shape != weight.shape:
             raise ValueError("hieght and weight must be of the same length")
         if (height < 0).any() or (weight < 0).any():
@@ -30,9 +37,12 @@ def give_bmi(height : list[int | float], weight: list[int | float]) -> list[int 
         return []
     return bmi.tolist()
 
+
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     """
-    This function accepts a list of integers or floats and an integer representing a limit as a parameters. It returns a list of booleans (True if above the limit).
+    This function accepts a list of integers or floats and an integer \
+representing a limit as a parameters. It returns a list of booleans \
+(True if above the limit).
 
     Parameters:
     bmi : list(int | float) : A list of BMI values.
@@ -42,7 +52,7 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
     list(bool) : A list of booleans.
     """
     try:
-        if type(limit) != int:
+        if not isinstance(limit, int):
             raise ValueError("limit must be an integer")
         for i in bmi:
             if not isinstance(i, (int, float)):
@@ -55,4 +65,3 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         print("An error has occured: ", e)
         return []
     return (bmi > limit).tolist()
-    
