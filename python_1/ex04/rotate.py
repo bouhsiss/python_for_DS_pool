@@ -4,16 +4,25 @@ import numpy as np
 
 
 def transpose_image(image_array):
-    print(len(image_array))
+    """
+    Transposes the given image array.
+
+    Args:
+        image_array (numpy.ndarray): The input image array.
+
+    Returns:
+        numpy.ndarray: The transposed image array.
+    """
     transpose_image = [
         [image_array[j][i] for j in range(len(image_array))]
         for i in range(len(image_array[0]))
-        ]
+    ]
     return np.array(transpose_image)
 
 
 def main():
-    image_array = ft_load("python_1/ex03/animal.jpeg")
+    image_array = ft_load("ex03/animal.jpeg")
+    print(image_array)
 
     if image_array is not None:
         zoomed_image = zoom_image(image_array)

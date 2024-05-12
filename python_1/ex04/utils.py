@@ -3,6 +3,16 @@ import numpy as np
 
 
 def zoom_image(image_array: np.ndarray):
+    """
+    Zooms in on the center of an image array.
+
+    Parameters:
+    image_array (np.ndarray): The input image array.
+
+    Returns:
+    np.ndarray: The cropped image array.
+
+    """
     center_y, center_x = image_array.shape[0]//2, image_array.shape[1]//2
 
     start_x = max(0, center_x - 75)
@@ -15,6 +25,15 @@ def zoom_image(image_array: np.ndarray):
 
 
 def rgb_to_gray(image_array: np.ndarray):
+    """
+    Converts an RGB image to grayscale.
+
+    Parameters:
+    image_array (np.ndarray): The input RGB image as a NumPy array.
+
+    Returns:
+    np.ndarray: The grayscale image as a NumPy array.
+    """
     R = image_array[:, :, 0]
     G = image_array[:, :, 1]
     B = image_array[:, :, 2]
@@ -24,6 +43,15 @@ def rgb_to_gray(image_array: np.ndarray):
 
 
 def display(image_array: np.ndarray):
+    """
+    Display the given image array using matplotlib.
+
+    Parameters:
+    image_array (np.ndarray): The image array to be displayed.
+
+    Returns:
+    None
+    """
     plt.imshow(image_array, cmap='gray')
 
     plt.show()
