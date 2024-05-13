@@ -21,7 +21,7 @@ def transpose_image(image_array):
 
 
 def main():
-    image_array = ft_load("ex03/animal.jpeg")
+    image_array = ft_load("animal.jpeg")
     print(image_array)
 
     if image_array is not None:

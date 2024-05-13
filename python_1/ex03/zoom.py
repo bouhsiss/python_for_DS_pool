@@ -58,9 +58,10 @@ def display(image_array: np.ndarray):
 
 
 def main():
-    image_array = ft_load("python_1/ex03/animal.jpeg")
-
-    if image_array is None:
+    image_array = ft_load("animal.jpeg")
+    
+    if image_array is not None:
+        print(image_array)
         zoomed_image = zoom(image_array)
         grayscale_image = rgb_to_gray(zoomed_image)
         print("New shape after slicing: ", grayscale_image.shape)

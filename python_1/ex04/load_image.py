@@ -14,8 +14,10 @@ image, prints its format, and returns its pixel values in RGB format.
     Returns:
     np.ndarray: The pixel values of the image in RGB format.
     """
+    image_array = []
 
     try:
+        assert isinstance(path, str), "the given path isn't a valid string"
         image_array = np.asarray(Image.open(path))
 
         print("The shape of image is: ", image_array.shape)

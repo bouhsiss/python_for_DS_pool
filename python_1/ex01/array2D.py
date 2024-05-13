@@ -25,10 +25,10 @@ be integers")
         if not all(isinstance(i, list) for i in family):
             raise AssertionError("all elements of family must be lists")
 
-        if len({len(i) for i in family}) != 1:
+        try:
+            np_family = np.array(family)
+        except ValueError:
             raise AssertionError("all sublists must have the same length")
-
-        np_family = np.array(family)
         if np_family.ndim != 2:
             raise AssertionError("family must be a 2D array")
 

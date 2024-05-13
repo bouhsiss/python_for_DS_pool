@@ -14,9 +14,11 @@ image, prints its format, and returns its pixel values in RGB format.
     Returns:
     np.ndarray: The pixel values of the image in RGB format.
     """
+    image_array = []
 
     try:
-        image_array = np.asarray(Image.open(path))
+        assert isinstance(path, str), "the given path isn't a valid string"
+        image_array = np.array(Image.open(path))
 
         print("The shape of image is: ", image_array.shape)
     except FileNotFoundError as e:
@@ -28,5 +30,7 @@ image, prints its format, and returns its pixel values in RGB format.
     except UnidentifiedImageError as e:
         print("The file is not an image: ", e)
         return None
+    except AssertionError as e:
+        print("An assertion error has occured: ", e)
 
     return image_array
