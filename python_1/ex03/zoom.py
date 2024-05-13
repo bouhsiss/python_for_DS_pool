@@ -59,7 +59,7 @@ def display(image_array: np.ndarray):
 
 def main():
     image_array = ft_load("animal.jpeg")
-    
+
     if image_array is not None:
         print(image_array)
         zoomed_image = zoom(image_array)
