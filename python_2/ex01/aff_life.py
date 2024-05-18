@@ -8,10 +8,9 @@ def main():
     if life_expectancy_df is not None:
         try:
             morocco_row = life_expectancy_df.loc[
-                life_expectancy_df["country"] == "Morocco"
+                life_expectancy_df["country"] == "France"
             ]
             morocco_data = morocco_row.drop("country", axis=1).T
-
             morocco_data.plot(
                 legend=False,
                 xlabel="Year",
