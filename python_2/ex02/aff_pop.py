@@ -6,6 +6,8 @@ from matplotlib.ticker import FuncFormatter
 
 def main():
     population_df = load("population_total.csv")
+    # if population_df is not None:
+    #     plot_population(population_df) // to be added and structured as a function
     try:
         # define the countries to filter
         countries_to_filter = ["Morocco", "Afghanistan", "France"]
