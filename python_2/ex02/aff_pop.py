@@ -58,6 +58,10 @@ population for the given countries.
         # set the country column as the index and transpose the dataframe
         filtered_population_df.set_index("country", inplace=True)
         transposed_filtered_population_df = filtered_population_df.T
+        transposed_filtered_population_df.columns.name = None
+        transposed_filtered_population_df = (
+            transposed_filtered_population_df.loc['1800':'2050']
+        )
 
         # replace the K, M, B suffixes with the corresponding values
         # and convert the values to integers
@@ -80,6 +84,11 @@ population for the given countries.
         y_ticks = [i * 1e7 for i in range(y_ticks_count)]
         y_ticks_labels = ["{:,.0f}M".format(tick/1e6) for tick in y_ticks]
         plt.yticks(y_ticks, y_ticks_labels)
+
+        plt.legend(loc="lower right")
+        plt.ylabel("Population")
+        plt.xlabel("Year")
+        plt.title("Population Projections")
         plt.show()
 
     except KeyError as e:
@@ -90,15 +99,15 @@ population for the given countries.
 
 def main():
     """
-    Load the total population dataset and plot the total population for \
-specific countries.
+    A dynamic program that loads the total population dataset and plot the \
+total population for the specified countries from the years 1800 to 2050.
     """
     # load the total population dataset
     population_df = load("population_total.csv")
     if population_df is not None:
         plot_population(
             population_df,
-            ["Morocco", "Afghanistan", "France", "Angola"]
+            ["Morocco", "Algeria"]
         )
 
 
