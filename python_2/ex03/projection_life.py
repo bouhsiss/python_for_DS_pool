@@ -48,35 +48,40 @@ gross national product of the year 1900 for each country.
 
     if (income_per_person_gdppercapita_df is not None and
             life_expectancy_df is not None):
-        # filter the data for the year 1900
-        income_per_person_gdppercapita_df_1900 = (
-            income_per_person_gdppercapita_df["1900"]
-        )
-        life_expectancy_df_1900 = life_expectancy_df["1900"]
+        try:
+            # filter the data for the year 1900
+            income_per_person_gdppercapita_df_1900 = (
+                income_per_person_gdppercapita_df["1900"]
+            )
+            life_expectancy_df_1900 = life_expectancy_df["1900"]
 
-        # plot our data distribution
-        # observe_data(
-        #     income_per_person_gdppercapita_df_1900, life_expectancy_df_1900
-        # )
+            # plot our data distribution
+            # observe_data(
+            #     income_per_person_gdppercapita_df_1900,life_expectancy_df_1900
+            # )
 
-        # the gdppercapita data is skewed to the right, so we will use the log
-        # scale to normalize the distribution of the data
-        income_per_person_gdppercapita_df_1900_log = np.log10(
-            income_per_person_gdppercapita_df_1900
-        )
+            # the gdppercapita data is skewed to the right, so we will use the
+            # log scale to normalize the distribution of the data
+            income_per_person_gdppercapita_df_1900_log = np.log10(
+                income_per_person_gdppercapita_df_1900
+            )
 
-        plt.scatter(
-            income_per_person_gdppercapita_df_1900_log,
-            life_expectancy_df_1900
-        )
+            plt.scatter(
+                income_per_person_gdppercapita_df_1900_log,
+                life_expectancy_df_1900
+            )
 
-        # define the x-axis ticks and labels for the scatter plot
-        # ([2.477, 3, 4] are the log10 of 300, 1000, 10000)
-        plt.xticks(ticks=[2.477, 3, 4], labels=["300", "1K", "10K"])
-        plt.title("1900")
-        plt.ylabel("Life Expectancy")
-        plt.xlabel("Gross domestic product")
-        plt.show()
+            # define the x-axis ticks and labels for the scatter plot
+            # ([2.477, 3, 4] are the log10 of 300, 1000, 10000)
+            plt.xticks(ticks=[2.477, 3, 4], labels=["300", "1K", "10K"])
+            plt.title("1900")
+            plt.ylabel("Life Expectancy")
+            plt.xlabel("Gross domestic product")
+            plt.show()
+        except KeyError as e:
+            print("Key not found: {0}".format(e))
+        except Exception as e:
+            print("an error has occured: {0}".format(e))
 
 
 if __name__ == "__main__":
