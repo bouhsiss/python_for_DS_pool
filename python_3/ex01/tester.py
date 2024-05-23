@@ -14,7 +14,6 @@ print(Cersei.__dict__)
 print(Cersei.__str__)
 print(Cersei.is_alive)
 print('---')
-    def __repr__(self) -> str:
-        return f"Vector: ({self.family_name}, {self.eyes}, {self.hairs})"
 Jaine = Lannister.create_lannister("Jaine", True)
-print(f"Name : {Jaine.first_name, type(Jaine).__name__}, Alive : {Jaine.is_alive}")
+print(f"Name : {Jaine.first_name, type(Jaine).__name__}, Alive : \
+{Jaine.is_alive}")

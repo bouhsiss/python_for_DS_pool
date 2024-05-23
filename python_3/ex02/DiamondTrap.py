@@ -3,7 +3,8 @@ from S1E7 import Baratheon, Lannister
 
 class King(Baratheon, Lannister):
     """
-    A class representing a king in the world of Game of Thrones, inheriting traits from both House Baratheon and House Lannister.
+    A class representing a king in the world of Game of Thrones, inheriting \
+traits from both House Baratheon and House Lannister.
     """
 
     def set_eyes(self, eyes):
@@ -32,7 +33,7 @@ class King(Baratheon, Lannister):
             str: The eye color of the King.
         """
         return self.eyes
-    
+
     def get_hairs(self):
         """
         Get the hair color of the King.

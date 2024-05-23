@@ -4,7 +4,8 @@ from abc import ABC, abstractmethod
 class Character(ABC):
     """
     An abstract class representing a Game of Thrones character.
-    create your own hero, villain, or poor soul who won't survive the next episode.
+    create your own hero, villain, or poor soul who won't survive the next \
+episode.
     Valar Morghulis.
     """
     def __init__(self, first_name, is_alive=True):
@@ -19,7 +20,8 @@ class Character(ABC):
 class Stark(Character):
     """
     A class representing the Stark family. Or those still alive.
-    Winter is coming. but so are loyalty, honor, and a surprising amount of direwolves
+    Winter is coming. but so are loyalty, honor, and a surprising amount of \
+direwolves
     """
     def __init__(self, first_name, is_alive=True):
         """__ docstring to be written later__"""
@@ -28,4 +30,3 @@ class Stark(Character):
     def die(self):
         """__ docstring to be written later__"""
         self.is_alive = False
-
