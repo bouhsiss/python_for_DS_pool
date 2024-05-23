@@ -7,6 +7,18 @@ class King(Baratheon, Lannister):
 traits from both House Baratheon and House Lannister.
     """
 
+    def __init__(self, first_name, is_alive=True):
+        """
+        Initialize a King with the given first name and default status of \
+being alive.
+
+        Parameters:
+            first_name (str): The first name of the King.
+            is_alive (bool, optional): The status of the King's life. \
+Default is True.
+        """
+        super().__init__(first_name, is_alive)
+
     def set_eyes(self, eyes):
         """
         Set the eye color of the King.

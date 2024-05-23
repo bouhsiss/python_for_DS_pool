@@ -55,9 +55,7 @@ vector.
         Parameters:
             object (int): The number to divide each element in the vector by.
         """
-        if object == 0:
-            print('Division by 0 is not possible')
-            return
-        self.vector = [x / object for x in self.vector]
+        self.vector = [x / object if object != 0 else float("NaN")
+                       for x in self.vector]
         print(self.vector)
         return self.vector
