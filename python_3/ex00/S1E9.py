@@ -24,9 +24,19 @@ class Stark(Character):
 direwolves
     """
     def __init__(self, first_name, is_alive=True):
-        """__ docstring to be written later__"""
+        """
+        Initializes a Stark Character with the given first name and default \
+status of being alive.
+
+        Parameters:
+            first_name (str): The first name of the Stark character.
+            is_alive (bool, optional): The status of the character's life. \
+Default is True.
+        """
         super().__init__(first_name, is_alive)
 
     def die(self):
-        """__ docstring to be written later__"""
+        """
+        Sets the status of the Stark character to deceased.
+        """
         self.is_alive = False

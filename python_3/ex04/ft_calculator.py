@@ -18,7 +18,6 @@ operations on a vector.
         """
         result = sum([x * y for x, y in zip(V1, V2)])
         print("Dot product is: {}".format(result))
-        return result
 
     @staticmethod
     def add_vec(V1: list[float], V2: list[float]) -> None:
@@ -34,7 +33,6 @@ operations on a vector.
         """
         result = [float(x + y)for x, y in zip(V1, V2)]
         print("Addition of vectors is: {}".format(result))
-        return result
 
     @staticmethod
     def sous_vec(V1: list[float], V2: list[float]) -> None:
@@ -50,4 +48,3 @@ operations on a vector.
         """
         result = [float(x - y) for x, y in zip(V1, V2)]
         print("Subtraction of vectors is: {}".format(result))
-        return result

@@ -23,7 +23,6 @@ operations on.
         """
         self.vector = [x + object for x in self.vector]
         print(self.vector)
-        return self.vector
 
     def __mul__(self, object) -> None:
         """
@@ -34,7 +33,6 @@ operations on.
         """
         self.vector = [x * object for x in self.vector]
         print(self.vector)
-        return self.vector
 
     def __sub__(self, object) -> None:
         """
@@ -46,7 +44,6 @@ vector.
         """
         self.vector = [x - object for x in self.vector]
         print(self.vector)
-        return self.vector
 
     def __truediv__(self, object) -> None:
         """
@@ -58,4 +55,3 @@ vector.
         self.vector = [x / object if object != 0 else float("NaN")
                        for x in self.vector]
         print(self.vector)
-        return self.vector
