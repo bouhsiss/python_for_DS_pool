@@ -14,6 +14,8 @@ an object that when called returns the result of the arguments calculation"""
     count = 0
 
     def inner() -> float:
+        """ a function that returns the result of the calculation of the \
+arguments """
         try:
             nonlocal count
             count += 1
