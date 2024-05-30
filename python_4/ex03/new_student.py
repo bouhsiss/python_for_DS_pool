@@ -18,5 +18,3 @@ class Student:
 
     def __post_init__(self):
         self.login = self.name[0].upper() + self.surname.lower()
-
-
